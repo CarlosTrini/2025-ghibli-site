@@ -1,0 +1,55 @@
+.g-hero-pages {
+  position: relative;
+  height: 60vh;
+  background-color: var(--color-primary);
+  padding: 1.5rem;
+}
+
+.g-hero-pages__title{
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: var(--color-primary);
+  padding: 2rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--color-white-full);
+
+   @media (min-width: 640px) {
+        font-size: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 4.5rem;
+    }
+}
+
+.g-hero-pages__img{
+  object-fit: cover;
+}
+
+
+.g-description-pages {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem 0;
+    color: var(--color-white-full);
+
+    h4{
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--color-fourth);
+        margin-bottom: 1rem;
+    }
+}
+
+.g-description-pages__desc {
+    width: 60%;
+    line-height: 2rem;
+}

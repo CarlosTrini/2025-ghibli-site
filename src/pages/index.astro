@@ -1,11 +1,150 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import css from "../styles/components/index.module.css";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+  <section class="hero w-full h-[60vh] lg:h-[80vh]">
+    <img src="" alt="" id="heroImage" class={` object-cover`} />
+  </section>
+
+  <h1 class={`title-1`}>Studio Ghibli</h1>
+
+  <section class={`g-container-85 lg:flex py-[30px] `}>
+    <section class={`lg:w-[48%]`}>
+      <!-- HISTORIA -->
+      <div class={`g-font-size-20 flex flex-col gap-5  `}>
+		  <p>
+			Fue fundada en junio de 1985 por <strong> Hayao Miyazaki e Isao Takahata</strong>,
+			quienes serían los primeros directores; y <strong>Toshio Suzuki</strong>, que actuaria
+			de productor y presidente de la compañía.
+		  </p>
+        <p>
+          <strong>El Studio Ghibli (スタジオジブリ Sutajio Jiburi?)</strong> es un
+          estudio de animación japonés, con sede en Tokio. Fue fundada en 1985 por
+          Hayao Miyazaki y Isao Takahata, y a día de hoy, han realizado más de 23
+          películas, además de algunas otras clases de trabajos (cortometrajes, anuncios
+          publicitarios, ...). Tienen el respeto del público japonés y también el
+          internacional, donde la crítica y el sector de la animación le presenta
+          muchos respetos. Debido a su popularidad, se abrió el Museo Ghibli, el
+          cual se encuentra a las afueras de Tokio y para el 2022 se espera tener
+          listo el Ghibli Park[1].
+        </p>
+        <small
+          >Fuente: <a
+            href="https://studioghibli.fandom.com/es/wiki/Studio_Ghibli"
+            class={`text-[var(--color-fourth)]`}>studioghibli.fandom.com</a
+          ></small
+        >
+      </div>
+    </section>
+
+    <section
+      class={`lg:w-[48%] flex flex-col lg:flex-row justify-center items-center mt-5 lg:mt-0 `}
+    >
+      <!-- IMAGENES -->
+      <div class={` w-[80%] md:w-[40%] xl:w-[33%] relative`}>
+		<p class={`absolute bottom-0  g-bg-white g-text-dark g-font-weight-700 g-font-size-16 p-2 rounded mb-2 ml-2`}>Hayao Miyazaki</p>
+        <img
+          src="/img/fundador-1.webp"
+          alt="Hayao Miyazaki"
+          class={` h-[300px] md:max-h-[350px]`}
+        />
+      </div>
+      <div class={` w-[80%] md:w-[40%] xl:w-[33%] relative`}>
+		<p class={`absolute bottom-0  g-bg-white g-text-dark g-font-weight-700 g-font-size-16 p-2 rounded mb-2 ml-2`}>Isao Takahata</p>
+        <img 
+          src="/img/fundador-2.webp"
+          alt="Isao Takahata"
+          class={` h-[300px] md:max-h-[350px]`}
+        />
+      </div>
+      <div class={` w-[80%] md:w-[40%] xl:w-[33%] relative`}>
+		<p class={`absolute bottom-0  g-bg-white g-text-dark g-font-weight-700 g-font-size-16 p-2 rounded mb-2 ml-2`}>Toshio Suzuki</p>
+        <img
+          src="/img/fundador-3.jpg"
+          alt="Toshio Suzuki"
+          class={` h-[300px] md:max-h-[350px]`}
+        />
+      </div>
+    </section>
+  </section>
+
+  <section class={`g-container-85 py-[30px]`}>
+    <h2 class={`title-2`}>Más populares</h2>
+
+    <p class="g-font-size-18 text-[var(--color-primary)] my-5">
+      <strong>10 películas más populares de Studio Ghibli</strong>.
+    </p>
+
+    <table
+      class={`${css["ten-films-table"]} min-w-full table-auto border border-gray-300 `}
+    >
+      <thead class="bg-gray-100 text-left">
+        <tr>
+          <th class="px-4 py-2 border-b">Ranking</th>
+          <th class="px-4 py-2 border-b">Título</th>
+          <th class="px-4 py-2 border-b">Popularidad (%)</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        <tr class="">
+          <td class="px-4 py-2">1</td>
+          <td class="px-4 py-2">My Neighbor Totoro</td>
+          <td class="px-4 py-2">48.5%</td>
+        </tr>
+        <tr class="">
+          <td class="px-4 py-2">2</td>
+          <td class="px-4 py-2">Spirited Away</td>
+          <td class="px-4 py-2">44.5%</td>
+        </tr>
+        <tr class="">
+          <td class="px-4 py-2">3</td>
+          <td class="px-4 py-2">Castle in the Sky</td>
+          <td class="px-4 py-2">36.4%</td>
+        </tr>
+        <tr class="">
+          <td class="px-4 py-2">4</td>
+          <td class="px-4 py-2">Kiki’s Delivery Service</td>
+          <td class="px-4 py-2">36.3%</td>
+        </tr>
+        <tr class="">
+          <td class="px-4 py-2">5</td>
+          <td class="px-4 py-2">Nausicaä of the Valley of the Wind</td>
+          <td class="px-4 py-2">27.2%</td>
+        </tr>
+        <tr class="">
+          <td class="px-4 py-2">6</td>
+          <td class="px-4 py-2">Princess Mononoke</td>
+          <td class="px-4 py-2">23.1%</td>
+        </tr>
+        <tr class="">
+          <td class="px-4 py-2">7</td>
+          <td class="px-4 py-2">Howl’s Moving Castle</td>
+          <td class="px-4 py-2">18.9%</td>
+        </tr>
+        <tr class="">
+          <td class="px-4 py-2">8</td>
+          <td class="px-4 py-2">Ponyo on the Cliff by the Sea</td>
+          <td class="px-4 py-2">15.2%</td>
+        </tr>
+        <tr class="">
+          <td class="px-4 py-2">9</td>
+          <td class="px-4 py-2">Porco Rosso</td>
+          <td class="px-4 py-2">14.9%</td>
+        </tr>
+        <tr class="">
+          <td class="px-4 py-2">10</td>
+          <td class="px-4 py-2">Whisper of the Heart</td>
+          <td class="px-4 py-2">12.0%</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+	<div class={`md:w-[50%] mx-auto`}>
+		<img src="/img/logo.webp" alt="">
+	</div>
+  </section>
 </Layout>

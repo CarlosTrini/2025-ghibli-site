@@ -1,0 +1,41 @@
+---
+import type { locationsDataAPI } from "../types/interfaces";
+
+interface Props {
+  locationsData: locationsDataAPI[];
+}
+
+const { locationsData } = Astro.props;
+
+
+//     const filmImage = await getFilmByUrl(loc.films[0]);
+//     return {
+//       ...loc,
+//       films: [filmImage?.image],
+//     };
+//   }) ?? []
+// );
+---
+
+{
+  locationsData?.map((locations) => (
+   
+      <div class={`w-full border-[1px] border-[var(--color-tertiary)] rounded-[10px] p-5 mb-5 md:w-[48%]  lg:w-[32%] mx-auto max-w-[470px]`}>
+        <p
+          class={`g-bg-fifth g-font-size-20 g-font-weight-700 g-font-style-italic text-center mb-5`}
+        >
+          {locations.name}
+        </p>
+        <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+          Clima: <span class={`g-font-weight-400`}>{locations.climate}</span>
+        </p>
+        <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+          Terreno: <span class={`g-font-weight-400`}>{locations.terrain}</span>
+        </p>
+        <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+          Agua superficial:{" "}
+          <span class={`g-font-weight-400`}>{locations.surface_water}</span>
+        </p>
+      </div>
+  ))
+}

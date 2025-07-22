@@ -1,0 +1,114 @@
+/* ============================================TAMAÑOS DE FUENTE */
+.g-font-size-10 {
+    font-size: 10px;
+}
+
+.g-font-size-12 {
+    font-size: 12px;
+}
+
+.g-font-size-14 {
+    font-size: 14px;
+}
+
+.g-font-size-16 {
+    font-size: 16px;
+}
+
+.g-font-size-18 {
+    font-size: 18px;
+}
+
+.g-font-size-20 {
+    font-size: 20px;
+}
+
+.g-font-size-22 {
+    font-size: 22px;
+}
+
+.g-font-size-24 {
+    font-size: 24px;
+}
+
+.g-font-size-26 {
+    font-size: 26px;
+}
+
+.g-font-size-28 {
+    font-size: 28px;
+}
+
+.g-font-size-30 {
+    font-size: 30px;
+}
+
+.g-font-size-32 {
+    font-size: 32px;
+}
+
+.g-font-size-34 {
+    font-size: 34px;
+}
+
+.g-font-size-36 {
+    font-size: 36px;
+}
+
+.g-font-size-38 {
+    font-size: 38px;
+}
+
+
+/* ============================================ESETILOS DE FUENTE */
+
+.g-font-style-italic {
+    font-style: italic;
+}
+
+.g-font-style-oblique {
+    font-style: oblique;
+}
+
+.g-font-style-normal {
+    font-style: normal;
+}
+
+
+/* ============================================WEIGHT DE FUENTE */
+
+.g-font-weight-100 {
+    font-weight: 100;
+}
+
+.g-font-weight-200 {
+    font-weight: 200;
+}
+
+.g-font-weight-300 {
+    font-weight: 300;
+}
+
+.g-font-weight-400 {
+    font-weight: 400;
+}
+
+.g-font-weight-500 {
+    font-weight: 500;
+}
+
+.g-font-weight-600 {
+    font-weight: 600;
+}
+
+.g-font-weight-700 {
+    font-weight: 700;
+}
+
+.g-font-weight-800 {
+    font-weight: 800;
+}
+
+.g-font-weight-900 {
+    font-weight: 900;
+}

@@ -1,0 +1,39 @@
+---
+import CardLocation from "../components/CardLocation.astro";
+import EmptyData from "../components/ui/EmptyData.astro";
+import Error from "../components/ui/Error.astro";
+import Loader from "../components/ui/Loader.astro";
+import HeroDetails from "../components/HeroDetails.astro";
+import Layout from "../layouts/Layout.astro";
+import type { locationsDataAPI } from "../types/interfaces";
+import { getLocations } from "../services/getLocations";
+
+const locationsData: locationsDataAPI[] | null = await getLocations();
+let action = '';
+
+console.log(locationsData);
+
+if (!locationsData) {
+  action = "error";
+} else if (locationsData?.length === 0) {
+  action = "empty";
+} else if (locationsData?.length > 0) {
+  action = "data";
+}
+---
+
+<Layout title="Ubicaciones">
+  <HeroDetails
+    pageTitle="Ubicaciones"
+    detailsTitle="Lugares que inspiran magia"
+    detailsDescription="Las películas de Studio Ghibli están llenas de paisajes inolvidables, muchos de ellos inspirados en sitios reales. Desde pueblos costeros hasta antiguos baños termales, estas ubicaciones dan vida a mundos encantados donde la naturaleza, la fantasía y la historia se entrelazan. Aquí exploramos algunos de los lugares que inspiraron la magia visual de Ghibli."
+    imgSrc="/img/hero-location.jpg"
+  />
+
+  <section class={`g-container-85 py-[30px] md:flex flex-wrap gap-3`}>
+    
+    {action == "error" && <Error />}
+    {action == "empty" && <EmptyData />}
+    {action == "data" && <CardLocation locationsData={locationsData!} />}
+  </section>
+</Layout>

@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "./utils/_colors.css";
+@import "./utils/_fonts.css";
+
+:root {
+  /* LIGHT MODE */
+  --color-white: #ffffff;
+  --color-white-full: #ffffff;
+  --color-dark:#111111;
+  --color-dark-full: #111111;
+ --color-primary: #5D8FA3;
+  --color-secondary: #4D9E94;
+  --color-tertiary: #5ED0C2;
+  --color-fourth: #D6E85C;
+  --color-fifth: #F0F9D4;
+
+  /* SIZES */
+
+  --page-size-xs: 0px;
+  --page-size-sm: 640px;
+  --page-size-md: 768px;
+  --page-size-lg: 1024px;
+  --page-size-xl: 1280px;
+  --page-size-2xl: 1536px;
+}
+
+body[data-theme="dark"] {
+  /* DARK MODE */
+  --color-white: #000000;
+  --color-white-full: #f5f1f1;
+  --color-dark:#ffffff;
+  --color-dark-full: #000000;
+--color-primary : #052633; 
+--color-secondary : #005148; 
+--color-tertiary : #019587; 
+--color-fourth : #96a809; 
+--color-fifth : #bddf75; 
+}
+
+body{
+    background-color: #f0f0f5;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+.g-page-size {
+  /* base: < 640px */
+  width: 95%;
+  margin: 0 auto;
+
+  @media (min-width: 640px) {
+    /* sm */
+    width: 90%;
+  }
+
+  @media (min-width: 768px) {
+    /* md */
+    width: 90%;
+  }
+
+  @media (min-width: 1024px) {
+    /* lg */
+    width: 85%;
+  }
+
+  @media (min-width: 1280px) {
+    /* xl */
+    width: 85%;
+  }
+
+  @media (min-width: 1536px) {
+    /* 2xl */
+    width: 85%;
+  }
+}
+
+
+
+.g-container-75{
+  margin-right: auto;
+  margin-left: auto;
+  width: 75%;
+}
+.g-container-80{
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+}
+.g-container-85{
+  margin-right: auto;
+  margin-left: auto;
+  width: 85%;
+}
+.g-container-90{
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+}
+.g-container-95{
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+}
+
+
+.title-1{
+    font-weight: 600;
+    font-style: italic;
+    font-size: 2rem;
+    padding:2.5rem auto;
+    text-align: center;
+    background-color: var(--color-primary);
+    color: var(--color-white-full);
+
+    @media (min-width: 640px) {
+        font-size: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 4.5rem;
+    }
+}
+
+.title-2{
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.5rem;
+    padding:2.5rem auto;
+    text-align: center;
+    background-color: var(--color-primary);
+    color: var(--color-white-full);
+
+    @media (min-width: 640px) {
+        font-size: 2.5rem;
+    }
+
+    /* @media (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 4.5rem;
+    } */
+}
+
+

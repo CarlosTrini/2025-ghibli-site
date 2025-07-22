@@ -1,0 +1,10 @@
+
+
+
+.ten-films-table{
+    
+    tbody tr:hover {
+        background-color: var(--color-fifth);
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,35 @@
+---
+import css from "../styles/components/header.module.css";
+---
+
+<header class={`${css["header-nav"]} g-bg-dark-full md:max-h-[70px]`}>
+  <nav class="g-container-85 md:flex justify-between items-center py-2">
+    <div class="md:w-[20%] lg:w-[20%] h-[50px]">
+      <img src="/img/logo.svg" alt="" class={`${css["logo-color"]}`} />
+    </div>
+
+    <section class="md:w-[50%] logo-color sm:flex justify-center md:justify-end items-center gap-5">
+      <div class="text-center mt-3 md:mt-0">
+        <button class={`w-[20px] h-[20xpx]`} id="themeButton"
+          ><img src="/img/icon-light.svg" id="iconTheme" alt="" /></button
+        >
+      </div>
+      <ul
+        class={`${css["nav-link"]} flex flex-wrap md:flex-nowrap justify-center md:justify-end items-center h-full gap-5 `}
+      >
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/locations">Ubicaciones</a>
+        </li>
+        <li>
+          <a href="/films">Peliculas</a>
+        </li>
+        <li>
+          <a href="/">Personajes</a>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</header>

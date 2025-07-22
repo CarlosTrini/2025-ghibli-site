@@ -1,0 +1,27 @@
+---
+import css from '../styles/components/heroDetails.module.css';
+
+interface Props {
+    imgSrc: string;
+    pageTitle: string;
+    detailsTitle: string;
+    detailsDescription: string;
+}
+
+const {imgSrc, pageTitle, detailsTitle, detailsDescription} = Astro.props;
+---
+
+
+ <section class={`${css['g-hero-pages']} `}>
+    <h2 class={`${css['g-hero-pages__title']}`}>{pageTitle}</h2>
+    <img src={imgSrc} alt="" class={`${css['g-hero-pages__img']}`} />
+  </section>
+
+  <section class={`g-bg-primary`}>
+    <div class={`${css['g-description-pages']}`}>
+      <h4>{detailsTitle}</h4>
+      <p class={`${css['g-description-pages__desc']}`}>
+        {detailsDescription}
+      </p>
+    </div>
+  </section>
