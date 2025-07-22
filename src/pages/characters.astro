@@ -1,0 +1,39 @@
+---
+import CardLocation from "../components/CardLocation.astro";
+import EmptyData from "../components/ui/EmptyData.astro";
+import Error from "../components/ui/Error.astro";
+import Loader from "../components/ui/Loader.astro";
+import HeroDetails from "../components/HeroDetails.astro";
+import Layout from "../layouts/Layout.astro";
+import type { locationsDataAPI } from "../types/interfaces";
+import { getLocations } from "../services/getLocations";
+
+const locationsData: locationsDataAPI[] | null = await getLocations();
+let action = '';
+
+console.log(locationsData);
+
+if (!locationsData) {
+  action = "error";
+} else if (locationsData?.length === 0) {
+  action = "empty";
+} else if (locationsData?.length > 0) {
+  action = "data";
+}
+---
+
+<Layout title="Personajes">
+  <HeroDetails
+    pageTitle="Personajes"
+    detailsTitle="Almas que habitan la fantasía"
+    detailsDescription="Los personajes de Studio Ghibli son el corazón de cada historia. Desde jóvenes valientes hasta espíritus misteriosos, cada uno refleja emociones reales y complejidades humanas dentro de mundos extraordinarios. Esta sección celebra a quienes dan vida a las aventuras, dejando huella más allá de la pantalla."
+    imgSrc="/img/hero-characters.jpg"
+  />
+
+  <section class={`g-container-85 py-[30px] md:flex flex-wrap gap-3`}>
+    
+    {action == "error" && <Error />}
+    {action == "empty" && <EmptyData />}
+    {action == "data" && <CardLocation locationsData={locationsData!} />}
+  </section>
+</Layout>
