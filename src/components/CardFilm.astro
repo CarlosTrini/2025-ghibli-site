@@ -1,0 +1,49 @@
+---
+import css from '../styles/components/cardFilm.module.css';
+import type { FilmDataAPI } from '../types/interfaces';
+
+interface Props {
+    filmsData: FilmDataAPI[];
+}
+
+const {filmsData} = Astro.props;
+
+
+---
+
+
+
+{
+
+    filmsData?.map( film => (
+            <div class={`${css['card-film']}  mb-4 lg:mb-0 w-[80%] sm:w-[60%]  md:w-[45%]  lg:w-[30%] xl:w-[23%] xxl:w-[32%] mx-auto rounded-[10px] overflow-hidden h-[400px] sm:h-[400px] md:h-[390px] lg:h-[420px] xl:h-[430px] `}>
+                <img src={film.image}  alt="">
+
+                <div class={`${css['card-film__content']}`}>
+                    <div class={`${css['card-film__content-title']}`}>
+                        <h3>{film.title}</h3>
+                        <p> <span> ( {film.release_date} )</span>   {film.original_title}</p>
+                    </div>
+
+                    <div class={`mt-4 ${css['card-film__content-desc']}`}>
+                        <p>
+                            {
+                                film.description.length > 100
+                                ? film.description.slice(0, 200) + ('...')
+                                : film.description
+                            
+                            }
+                        </p>
+                    </div>
+
+                    <div class={`${css['more-info']} g-min-zoom-in `}>
+                        <a href={`/filmDetails/${film.id}`} ><button>Ver más...</button></a> 
+                    </div>
+                </div>
+            </div>
+    ))
+
+}
+
+
+

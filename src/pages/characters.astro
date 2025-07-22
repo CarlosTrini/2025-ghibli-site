@@ -2,7 +2,6 @@
 import CardLocation from "../components/CardLocation.astro";
 import EmptyData from "../components/ui/EmptyData.astro";
 import Error from "../components/ui/Error.astro";
-import Loader from "../components/ui/Loader.astro";
 import HeroDetails from "../components/HeroDetails.astro";
 import Layout from "../layouts/Layout.astro";
 import type { locationsDataAPI } from "../types/interfaces";
@@ -11,7 +10,6 @@ import { getLocations } from "../services/getLocations";
 const locationsData: locationsDataAPI[] | null = await getLocations();
 let action = '';
 
-console.log(locationsData);
 
 if (!locationsData) {
   action = "error";

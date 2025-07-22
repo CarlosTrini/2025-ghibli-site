@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 - Página no encontrada">
+  <section
+    class={` g-bg-primary h-[100vh] py-[30px]  flex items-center justify-center `}
+  >
+    <div class={`g-container-85 flex items-center justify-center flex-wrap gap-3`}>
+      <div class={`max-w-[500px]  overflow-hidden`}>
+        <img
+          src="/img/logo.webp"
+          alt=""
+          class={`object-fill g-invert-color `}
+        />
+      </div>
+      <div>
+        <p class={`text-5xl g-font-weight-700 g-text-white-full `}>Lo sentimos</p>
+        <p class={`g-font-weight-600  g-text-white-full text-2xl mt-5 `}>Página no encontrada</p>
+        <div class={`mt-5`}>
+          <a href="/"><button class={`g-bg-fifth g-text-primary g-font-size-20 g-font-weight-700 rounded-[15px] g-min-zoom-in p-2`}>Ir al home</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

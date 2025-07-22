@@ -1,8 +1,12 @@
 .g-hero-pages {
   position: relative;
-  height: 60vh;
+  height: 70vh;
   background-color: var(--color-primary);
   padding: 1.5rem;
+
+  @media (min-width: 640px) {
+    height: 80vh;
+  }
 }
 
 .g-hero-pages__title{
@@ -22,11 +26,11 @@
     }
 
     @media (min-width: 768px) {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     @media (min-width: 1024px) {
-        font-size: 4.5rem;
+        font-size: 4rem;
     }
 }
 

@@ -21,9 +21,9 @@ export interface FilmDataAPI {
   release_date: string;
   running_time: string;
   rt_score: string;
-  people: string[];
-  species: string[];
-  locations: string[];
-  vehicles: string[];
+  people: string[] | [];
+  species: string[] | [];
+  locations: string[] | [];
+  vehicles: string[] | [];
   url: string;
 }

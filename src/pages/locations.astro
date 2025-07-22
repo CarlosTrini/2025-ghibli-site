@@ -11,8 +11,6 @@ import { getLocations } from "../services/getLocations";
 const locationsData: locationsDataAPI[] | null = await getLocations();
 let action = '';
 
-console.log(locationsData);
-
 if (!locationsData) {
   action = "error";
 } else if (locationsData?.length === 0) {

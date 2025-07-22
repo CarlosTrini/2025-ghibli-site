@@ -47,6 +47,10 @@ img {
   /* object-fit: cover; */
 }
 
+a, button {
+  cursor: pointer;
+}
+
 .g-page-size {
   /* base: < 640px */
   width: 95%;
@@ -78,8 +82,6 @@ img {
   }
 }
 
-
-
 .g-container-75{
   margin-right: auto;
   margin-left: auto;
@@ -106,8 +108,11 @@ img {
   width: 95%;
 }
 
+.g-invert-color{
+  filter: invert(1);
+}
 
-.title-1{
+.g-title-1{
     font-weight: 600;
     font-style: italic;
     font-size: 2rem;
@@ -129,7 +134,7 @@ img {
     }
 }
 
-.title-2{
+.g-title-2{
     font-weight: 600;
     font-style: italic;
     font-size: 1.5rem;
@@ -152,3 +157,9 @@ img {
 }
 
 
+.g-min-zoom-in{
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(0.95);
+  }
+}
