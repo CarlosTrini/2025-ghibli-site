@@ -4,7 +4,7 @@
 .ten-films-table{
     
     tbody tr:hover {
-        background-color: var(--color-fifth);
+        background-color: var(--color-primary);
         font-weight: 700;
     }
 }

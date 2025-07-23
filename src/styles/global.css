@@ -4,6 +4,7 @@
 
 :root {
   /* LIGHT MODE */
+  --cero:0;
   --color-white: #ffffff;
   --color-white-full: #ffffff;
   --color-dark:#111111;
@@ -27,6 +28,7 @@
 
 body[data-theme="dark"] {
   /* DARK MODE */
+  --cero:1;
   --color-white: #000000;
   --color-white-full: #f5f1f1;
   --color-dark:#ffffff;
@@ -173,4 +175,8 @@ a, button {
 
 .g-shadow-middle {
   box-shadow: 0px 4px 6px -5px var(--color-dark);
+}
+
+.g-black-to-white{
+  filter: invert(var(--cero));
 }

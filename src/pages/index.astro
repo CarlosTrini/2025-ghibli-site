@@ -13,7 +13,7 @@ import css from "../styles/components/index.module.css";
   <section class={`g-container-85 lg:flex py-[30px] `}>
     <section class={`lg:w-[48%]`}>
       <!-- HISTORIA -->
-      <div class={`g-font-size-20 flex flex-col gap-5  `}>
+      <div class={`g-text-dark g-font-size-20 flex flex-col gap-5  `}>
 		  <p>
 			Fue fundada en junio de 1985 por <strong> Hayao Miyazaki e Isao Takahata</strong>,
 			quienes serían los primeros directores; y <strong>Toshio Suzuki</strong>, que actuaria
@@ -73,14 +73,14 @@ import css from "../styles/components/index.module.css";
   <section class={`g-container-85 py-[30px]`}>
     <h2 class={`g-title-2`}>Más populares</h2>
 
-    <p class="g-font-size-18 text-[var(--color-primary)] my-5">
+    <p class="g-font-size-18 g-text-tertiary my-5">
       <strong>10 películas más populares de Studio Ghibli</strong>.
     </p>
 
     <table
-      class={`${css["ten-films-table"]} min-w-full table-auto border border-gray-300 `}
+      class={`g-text-dark ${css["ten-films-table"]} min-w-full table-auto border border-gray-300 `}
     >
-      <thead class="bg-gray-100 text-left">
+      <thead class="g-bg-secondary text-left">
         <tr>
           <th class="px-4 py-2 border-b">Ranking</th>
           <th class="px-4 py-2 border-b">Título</th>
@@ -144,7 +144,7 @@ import css from "../styles/components/index.module.css";
 
   <section>
 	<div class={`md:w-[50%] mx-auto`}>
-		<img src="/img/logo.webp" alt="">
+		<img src="/img/logo.webp" alt="" class={`g-black-to-white`}>
 	</div>
   </section>
 </Layout>
