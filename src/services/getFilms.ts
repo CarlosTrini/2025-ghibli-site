@@ -33,10 +33,11 @@ export const getFilms = async (): Promise<FilmDataAPI[] | null> => {
 }
 
 
-export const getFilmByUrl = async (filmUrl: string): Promise<FilmDataAPI | null> => {
+
+export const getFilmById = async (id: string): Promise<FilmDataAPI | null> => {
     let response = null;
     try {
-        const fetching = await fetch(filmUrl,
+        const fetching = await fetch(`https://ghibliapi.vercel.app/films/${id}`,
             {
                 headers: {
                     'Content-Type': 'application/json'

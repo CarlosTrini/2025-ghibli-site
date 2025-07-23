@@ -7,6 +7,7 @@
 .g-bg-white-full{background-color: var(--color-white-full);}
 .g-bg-dark{background-color: var(--color-dark);}
 .g-bg-dark-full{background-color: var(--color-dark-full);}
+.g-bg-main{background-color: var(--color-main);}
 
 
 .g-text-white{color: var(--color-white);}
@@ -18,3 +19,4 @@
 .g-text-tertiary{color: var(--color-tertiary);}
 .g-text-fourth{color: var(--color-fourth);}
 .g-text-fifth{color: var(--color-fifth);}
+.g-text-main{color: var(--color-main);}

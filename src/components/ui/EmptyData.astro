@@ -1,12 +1,15 @@
 ---
 ---
 
-<section class={`g-container-85`}>
-    <div class={``}>
-        <h2 class="text-center text-2xl font-bold mb-6">No hay datos disponibles</h2>
-        <p class="text-center text-gray-600">Lo sentimos, no se encontraron ubicaciones para mostrar.</p>
+<section class={`h-[100vh] flex flex-col justify-center g-container-85  `}>
+        <div class={`w-[50%] lg:w-[20%] mx-auto`}>
+            <img src="/img/empty.png" alt="No data available" class="mx-auto mt-4 w-1/2" />
+        </div>
+        <div class={`mt-4`}>
+            <h2 class="text-center text-2xl font-bold mb-6 g-text-dark">No hay datos disponibles</h2>
+            <p class="text-center g-text-secondary g-font-weigt-700 g-font-size-20">Lo sentimos, no se encontraron ubicaciones para mostrar.</p>
     </div>
-    <div class={`w-[50%] lg:w-[20%] mx-auto`}>
-        <img src="/img/empty.png" alt="No data available" class="mx-auto mt-4 w-1/2" />
+    <div class={` text-end`}>
+        <a href="/" class={`py-[1rem] px-[2rem] g-bg-primary g-text-white-full g-font-size-20 g-font-weight-700 rounded `}><button>Regresar al home</button></a>
     </div>
 </section>

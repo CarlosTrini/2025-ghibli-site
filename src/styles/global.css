@@ -13,6 +13,7 @@
   --color-tertiary: #5ED0C2;
   --color-fourth: #D6E85C;
   --color-fifth: #F0F9D4;
+  --color-main:#ffffff;
 
   /* SIZES */
 
@@ -34,7 +35,8 @@ body[data-theme="dark"] {
 --color-secondary : #005148; 
 --color-tertiary : #019587; 
 --color-fourth : #96a809; 
---color-fifth : #bddf75; 
+--color-fifth : #bddf75;
+--color-main:#070707; 
 }
 
 body{
@@ -162,4 +164,13 @@ a, button {
   &:hover {
     transform: scale(0.95);
   }
+}
+
+
+.g-shadow{
+  box-shadow: 0 3px 9px 0 var(--color-dark);
+}
+
+.g-shadow-middle {
+  box-shadow: 0px 4px 6px -5px var(--color-dark);
 }

@@ -27,3 +27,16 @@ export interface FilmDataAPI {
   vehicles: string[] | [];
   url: string;
 }
+
+
+export interface CharacterDataAPI {
+  id: string;
+  name: string;
+  gender: string;
+  age: string;
+  eye_color: string;
+  hair_color: string;
+  films: string[]; // Array de URLs (strings)
+  species: string; // URL para a espécie
+  url: string;     // URL para o próprio personagem
+}

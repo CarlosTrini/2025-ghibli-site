@@ -1,0 +1,85 @@
+---
+import EmptyData from "../../components/ui/EmptyData.astro";
+import Error from "../../components/ui/Error.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getFilmById  } from "../../services/getFilms";
+import type { FilmDataAPI } from "../../types/interfaces";
+const { params } = Astro;
+const id = params?.id;
+
+const idExist = id ? true : false;
+let filmData: FilmDataAPI = {} as FilmDataAPI;
+
+if (id) {
+  const result = await getFilmById(id);
+
+  if (result) {
+    filmData = result;
+  }
+}
+
+---
+
+<Layout>
+  {!idExist && <Error />}
+  {idExist && Object.keys(filmData).length == 0 && <EmptyData />}
+  {
+    idExist && Object.keys(filmData).length > 0 && (
+      <section class={`g-container-85  g-font-weight-700 py-[30px]`}>
+        <h2 class={`g-text-fifth text-3xl sm:text-5xl lg:text-center `}>
+          {filmData.title}
+        </h2>
+
+        <div
+          class={`mt-[30px] lg:mt-0 lg:flex lg:items-center min-h-[90vh] lg:gap-[20px]`}
+        >
+          <div
+            class={`md:w-[70%] lg:w-[50%] max-w-[550px]   sm:h-[600px] md:h-[650px] lg:max-h-[700px] md:mx-auto lg:mx-[0px] rounded-[10px] overflow-hidden`}
+          >
+            <img src={filmData.image} alt="" class={``} />
+          </div>
+
+          <div class={`my-5 lg:mt-0 justify-self-start g-text-dark lg:w-[50%] max-w-[550px]`} >
+            <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+              Titulo original:{" "}
+              <span class={`g-font-weight-400`}>{filmData.original_title}</span>
+            </p>
+            <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+              Titulo traducido original:{" "}
+              <span class={`g-font-weight-400`}>{filmData.original_title_romanised}</span>
+            </p>
+            <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+              Duración:{" "}
+              <span class={`g-font-weight-400`}>{filmData.running_time} min</span>
+            </p>
+            <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+              Director:{" "}
+              <span class={`g-font-weight-400`}>{filmData.director}</span>
+            </p>
+            <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+              Productor:{" "}
+              <span class={`g-font-weight-400`}>{filmData.producer}</span>
+            </p>
+            <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+              Año:{" "}
+              <span class={`g-font-weight-400`}>{filmData.release_date}</span>
+            </p>
+            <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic `}>
+              Rating:{" "}
+              <span class={`g-font-weight-400`}>{filmData.rt_score}%</span>
+            </p>
+            
+            <p class={`g-font-size-20 g-font-weight-700 g-font-style-italic mt-5`}>
+              
+              <span class={`g-font-weight-400`}>{filmData.description}</span>
+            </p>
+          </div>
+        </div>
+
+        <div class={`text-end mb-5`}>
+            <a href="/films" class={`py-[0.5rem] px-[2rem] g-bg-fifth text-xl rounded-[15px] `}><button>Regresar</button></a>
+        </div>
+      </section>
+    )
+  }
+</Layout>

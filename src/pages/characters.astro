@@ -1,23 +1,24 @@
 ---
-import CardLocation from "../components/CardLocation.astro";
+import CardCharacters from "../components/CardCharacters.astro";
 import EmptyData from "../components/ui/EmptyData.astro";
 import Error from "../components/ui/Error.astro";
 import HeroDetails from "../components/HeroDetails.astro";
 import Layout from "../layouts/Layout.astro";
-import type { locationsDataAPI } from "../types/interfaces";
-import { getLocations } from "../services/getLocations";
+import type { CharacterDataAPI } from "../types/interfaces";
+import { getCharacters } from "../services/getCharacters";
 
-const locationsData: locationsDataAPI[] | null = await getLocations();
+const charactersData: CharacterDataAPI[] | null = await getCharacters();
 let action = '';
 
-
-if (!locationsData) {
+if (!charactersData) {
   action = "error";
-} else if (locationsData?.length === 0) {
+} else if (charactersData?.length === 0) {
   action = "empty";
-} else if (locationsData?.length > 0) {
+} else if (charactersData?.length > 0) {
   action = "data";
 }
+
+console.log('CHARACTERS ==>', charactersData);
 ---
 
 <Layout title="Personajes">
@@ -29,9 +30,8 @@ if (!locationsData) {
   />
 
   <section class={`g-container-85 py-[30px] md:flex flex-wrap gap-3`}>
-    
     {action == "error" && <Error />}
     {action == "empty" && <EmptyData />}
-    {action == "data" && <CardLocation locationsData={locationsData!} />}
+    {action == "data" && <CardCharacters charactersData={charactersData!} />}
   </section>
 </Layout>

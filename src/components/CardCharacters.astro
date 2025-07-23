@@ -1,0 +1,54 @@
+---
+import css from "../styles/components/cardCharacters.module.css";
+import type { CharacterDataAPI } from "../types/interfaces";
+
+interface Props {
+  charactersData: CharacterDataAPI[];
+}
+
+const { charactersData } = Astro.props;
+
+const genders = {
+  male: "/img/male.png",
+  female: "/img/female.png",
+};
+---
+
+{
+  charactersData?.map((character) => (
+    <div
+      class={`${css["card-character"]}   mb-4 lg:mb-0 w-[80%] sm:w-[60%]  md:w-[45%]  lg:w-[30%] xl:w-[23%] xxl:w-[32%] mx-auto rounded-[10px] overflow-hidden h-[400px] sm:h-[400px] md:h-[390px] lg:h-[420px] xl:h-[430px] `}
+    >
+      <div class={`${css["wave-up"]} `}>
+        <img src="/img/mountains.svg" alt="" />
+      </div>
+
+      <div class={`w-full  `}>
+        <div class={`w-[80px] h-[80px] mx-auto`}>
+          <img
+            src={genders[character.gender.toLowerCase() as keyof typeof genders] ?? "/img/unknown.png"}
+            alt=""
+          />
+        </div>
+        <div class={`px-3 mt-3`} >
+          <p class={`g-font-size-16 g-font-weight-700 g-font-style-italic g-text-fifth`}>
+          Nombre: <span class={`g-font-weight-400`}>{character.name}</span>
+        </p>
+        
+        <p class={`g-font-size-18 g-font-weight-700 g-font-style-italic g-text-fifth`}>
+          Edad: <span class={`g-font-weight-400`}>{character.age}</span>
+        </p>
+        <p class={`g-font-size-18 g-font-weight-700 g-font-style-italic g-text-fifth`}>
+          Color de ojos: <span class={`g-font-weight-400`}>{character.eye_color}</span>
+        </p>
+        <p class={`g-font-size-18 g-font-weight-700 g-font-style-italic g-text-fifth`}>
+          Color de cabello: <span class={`g-font-weight-400`}>{character.hair_color}</span>
+        </p>
+        </div>
+      </div>
+      <div class={`${css["wave-bottom"]} `}>
+        <img src="/img/mountains.svg" alt="" />
+      </div>
+    </div>
+  ))
+}
